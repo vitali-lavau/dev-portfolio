@@ -1,0 +1,119 @@
+@use '@/styles/abstracts/mixins' as *;
+@use '@/styles/abstracts/variables' as vars;
+
+.mobileMenu {
+  @include flex-center;
+  width: vars.$spacing-xl;
+  height: vars.$spacing-xl;
+  position: relative;
+}
+
+.menuButton {
+  @include flex-center;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 20;
+
+  svg {
+    width: vars.$spacing-xl;
+    height: vars.$spacing-xl;
+    stroke: vars.$text-color;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: vars.$spacing-xs 0 0;
+  background-color: vars.$neural-color-3;
+  border: 1px solid vars.$block-border-color;
+  border-radius: vars.$border-radius-sm;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.30);
+  z-index: 10;
+  animation: slideIn 0.3s ease forwards;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu ul li {
+  padding: vars.$spacing-xs vars.$spacing-md;
+  text-align: center;
+  border-bottom: 1px solid vars.$block-border-color;
+  transition: background-color .4s;
+
+  &:last-child {
+    border-bottom: none;
+    border-radius: 0 0 vars.$border-radius-sm vars.$border-radius-sm;
+  }
+
+  &:first-child {
+    border-radius: vars.$border-radius-sm vars.$border-radius-sm 0 0;
+  }
+
+  &:hover {
+    background-color: vars.$neural-color-4;
+
+    a {
+      color: vars.$primary-color;
+    }
+  }
+
+  &.active {
+    background-color: vars.$neural-color-4;
+
+    a {
+      color: vars.$primary-color;
+    }
+  }
+}
+
+.menu ul li a {
+  font-family: vars.$font-family-secondary;
+  color: vars.$text-color;
+  font-size: vars.$font-size-base;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color .4s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .menu ul li {
+    padding: vars.$spacing-xs vars.$spacing-md;
+
+
+    &.active {
+      background-color: vars.$neural-color-4;
+
+      a {
+        color: vars.$primary-color;
+      }
+    }
+  }
+
+  .menu ul li a {
+    font-size: vars.$font-size-min;
+    line-height: 1;
+  }
+}
