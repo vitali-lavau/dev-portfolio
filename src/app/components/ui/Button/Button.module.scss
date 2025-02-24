@@ -1,0 +1,111 @@
+@use '@/styles/abstracts/variables' as vars;
+
+.button {
+  font-family: vars.$font-family-secondary;
+  font-size: vars.$font-size-base;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .5px;
+  text-transform: capitalize;
+  border: none;
+  outline: none;
+  border-radius: vars.$border-radius-sm;
+  cursor: pointer;
+  transition: background-color .4s ease, border-color .4s ease, color .4s ease;
+}
+
+/* Primary */
+.primary {
+  background-color: vars.$primary-color;
+  color: vars.$white-color;
+}
+
+.primary:hover:not(.disabled) {
+  background-color: vars.$primary-border-color;
+}
+
+/* Secondary */
+.secondary {
+  color: vars.$primary-color;
+  background-color: transparent;
+  border: 2px solid vars.$primary-color;
+}
+
+.secondary:hover:not(.disabled) {
+  border-color: vars.$primary-border-color;
+  background-color: vars.$neural-color-2;
+}
+
+/* Ghost */
+.ghost {
+  color: vars.$text-color;
+  background-color: transparent;
+  border: 2px solid vars.$primary-color;
+}
+
+.ghost:hover:not(.disabled) {
+  color: vars.$white-color;
+  border-color: vars.$primary-border-color;
+  background-color: vars.$neural-color-3;
+}
+
+/* Danger */
+.danger {
+  color: vars.$text-color;
+  background-color: vars.$error-color;
+}
+
+.danger:hover:not(.disabled) {
+  color: vars.$white-color;
+  background-color: vars.$error-border-color;
+}
+
+/* Sizes */
+.small {
+  font-size: vars.$font-size-small;
+  padding: vars.$spacing-m vars.$spacing-lg;
+
+  @media only screen and (max-width: 1024px) {
+    font-size: vars.$font-size-min;
+    padding: vars.$spacing-sm vars.$spacing-md;
+  }
+
+  @media only screen and (max-width: 576px) {
+    padding: vars.$spacing-sm vars.$spacing-m;
+    font-weight: 400;
+  }
+}
+
+.medium {
+  padding: vars.$spacing-md vars.$spacing-xl;
+}
+
+.large {
+  padding: vars.$spacing-l vars.$spacing-xxl;
+}
+
+.min {
+  font-size: vars.$font-size-min;
+  padding: vars.$spacing-sm vars.$spacing-md;
+}
+
+/* Disabled */
+.disabled {
+  cursor: not-allowed;
+}
+
+.primary:disabled {
+  background-color: #3a2166;
+  opacity: .5;
+}
+
+.secondary:disabled,
+.ghost:disabled {
+  color: #4d2a88;
+  border-color: #4d2a88;
+}
+
+.danger:disabled {
+  background-color: #661A1A;
+  opacity: .6;
+}

@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  min-width: 320px;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  background: radial-gradient(
+                  271.18% 138.81% at 99.48% 1.78%,
+                  rgba(141, 92, 255, 0.04) 19.59%,
+                  rgba(142, 92, 255, 0.08) 40.31%,
+                  rgba(71, 94, 255, 0.12) 59.66%,
+                  rgba(36, 94, 255, 0.16) 79.66%,
+                  rgba(0, 95, 255, 0.20) 99.6%
+  ),
+  #0D1117;
+}
+
+.container {
+  @include container;
+
+  @media only screen and (max-width: 1280px) {
+    max-width: 1024px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 768px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 576px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    max-width: 100%;
+  }
+}
+
+.btn-min {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
