@@ -2,6 +2,7 @@
 
 .hero {
   position: relative;
+  margin: -113px 0 0;
   border-bottom: 1px solid rgba(vars.$white-color, .05);
   background: radial-gradient(271.18% 138.81% at 99.48% 1.78%,
           rgba(141, 92, 255, 0.04) 19.59%,
@@ -12,7 +13,6 @@
   #0D1117;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(30px);
-  transform: translateY(-113px);
 
   &__bg {
     position: absolute;
@@ -61,7 +61,7 @@
   }
 
   @media only screen and (max-width: 1280px) {
-    transform: translateY(-97px);
+    margin-top: -97px;
 
     &__inner {
       padding-top: 97px;
@@ -75,7 +75,7 @@
   }
 
   @media only screen and (max-width: 1024px) {
-    transform: translateY(-68px);
+    margin-top: -68px;
 
     &__inner {
       height: auto;
@@ -108,7 +108,7 @@
   }
 
   @media only screen and (max-width: 768px) {
-    transform: translateY(-48px);
+    margin-top: -48px;
 
     &__inner {
       padding-top: 48px;
