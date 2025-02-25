@@ -7,11 +7,12 @@
   line-height: 1;
   letter-spacing: .5px;
   text-transform: capitalize;
+  text-decoration: none;
   border: none;
   outline: none;
   border-radius: vars.$border-radius-sm;
   cursor: pointer;
-  transition: background-color .4s ease, border-color .4s ease, color .4s ease;
+  transition: background-color .4s ease, outline-color .4s ease, color .4s ease;
 }
 
 /* Primary */
@@ -28,11 +29,12 @@
 .secondary {
   color: vars.$primary-color;
   background-color: transparent;
-  border: 2px solid vars.$primary-color;
+  outline: 2px solid vars.$primary-color;
+  outline-offset: -2px;
 }
 
 .secondary:hover:not(.disabled) {
-  border-color: vars.$primary-border-color;
+  outline-color: vars.$primary-border-color;
   background-color: vars.$neural-color-2;
 }
 
@@ -40,12 +42,13 @@
 .ghost {
   color: vars.$text-color;
   background-color: transparent;
-  border: 2px solid vars.$primary-color;
+  outline: 2px solid vars.$primary-color;
+  outline-offset: -2px;
 }
 
 .ghost:hover:not(.disabled) {
   color: vars.$white-color;
-  border-color: vars.$primary-border-color;
+  outline-color: vars.$primary-border-color;
   background-color: vars.$neural-color-3;
 }
 
@@ -82,6 +85,15 @@
 
 .large {
   padding: vars.$spacing-l vars.$spacing-xxl;
+
+  @media only screen and (max-width: 1024px) {
+    padding: vars.$spacing-md vars.$spacing-xl;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: vars.$spacing-m vars.$spacing-lg;
+    font-size: 14px;
+  }
 }
 
 .min {

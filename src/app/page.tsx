@@ -1,10 +1,11 @@
-import Header from './components/Header/Header';
+import Header from '@/app/components/Header/Header';
+import Hero from '@/app/components/Hero/Hero';
 
 export default function Home() {
   return (
     <>
       <Header />
-      <h1>Главная страница</h1>
+      <Hero />
     </>
   );
 }
