@@ -27,6 +27,9 @@ export default function Header() {
             className={`${styles.header__btn}`}
             variant="ghost"
             size={'small'}
+            as="a"
+            href="files/cv/Vitali Lavau [Frontend Developer][Русский].pdf"
+            download
           >
             Download CV
           </Button>
