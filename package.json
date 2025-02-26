@@ -20,7 +20,8 @@
     "normalize.css": "^8.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.85.0"
+    "sass": "^1.85.0",
+    "swiper": "^11.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
