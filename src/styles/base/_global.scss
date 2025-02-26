@@ -18,6 +18,20 @@ body {
   #0D1117;
 }
 
+h4 {
+  margin: 0 0 $spacing-md;
+  font-family: $font-family-secondary;
+  font-size: $font-size-h4;
+  font-weight: 600;
+  line-height: 1.25; /* 26px */
+  letter-spacing: .5px;
+  text-transform: capitalize;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
 .container {
   @include container;
 
