@@ -135,6 +135,46 @@ h4 {
   }
 }
 
+.input,
+.textarea {
+  padding: $spacing-sm $spacing-m;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+  line-height: 1.5;
+  letter-spacing: .5px;
+  border-radius: $border-radius-sm;
+  border: 2px solid $neural-color-1;
+  background-color: $neural-color-3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  outline: none;
+  transition: border-color .4s, box-shadow .4s, background-color .4s, opacity .4s;
+
+  &::placeholder {
+    font-weight: 400;
+    color: rgba($text-color, .5);
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 4px 8px 0 $primary-color;
+  }
+
+  &:disabled {
+    background-color: $neural-color-4;
+    opacity: .6;
+    pointer-events: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
 .btn-min {
   padding: 4px 8px;
   font-size: 12px;
