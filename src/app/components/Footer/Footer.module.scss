@@ -1,0 +1,39 @@
+@use '@/styles/abstracts/variables' as vars;
+
+.footer {
+  background-color: vars.$background-color;
+
+  &__inner {
+    padding: vars.$spacing-xl 0;
+  }
+
+  &__copyright {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  @media only screen and (max-width: 1024px) {
+
+    &__inner {
+      padding-top: vars.$spacing-lg;
+      padding-bottom: vars.$spacing-lg;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    &__inner {
+      flex-direction: column;
+      padding-top: vars.$spacing-md;
+      padding-bottom: vars.$spacing-md;
+    }
+
+    &__social {
+      margin-bottom: vars.$spacing-md;
+    }
+
+    &__copyright {
+      text-align: center;
+    }
+  }
+}
