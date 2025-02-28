@@ -1,0 +1,75 @@
+@use "@/styles/abstracts/variables" as vars;
+@use '@/styles/abstracts/mixins' as mixins;
+
+.contact {
+  position: relative;
+  border-top: 1px solid vars.$block-border-color;
+  border-bottom: 1px solid vars.$block-border-color;
+  background-color: rgba(vars.$background-color, 1);
+  backdrop-filter: blur(20px);
+
+  &__form {
+
+    &-item {
+      width: 460px;
+      margin: 0 0 vars.$spacing-lg;
+    }
+
+    &-label {
+      margin: 0 0 vars.$spacing-sm;
+      font-family: vars.$font-family-secondary;
+      font-size: vars.$font-size-base;
+      font-weight: 400;
+      line-height: vars.$line-height-title;
+      letter-spacing: .5px;
+    }
+
+    &-btn {
+      width: 180px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 56%;
+    height: 100%;
+    background-color: vars.$background-color;
+    z-index: -1;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      mix-blend-mode: lighten;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(13, 17, 23, 1) 0%,
+              rgba(13, 17, 23, 1) 25%, rgba(13, 17, 23, 0.8883928571428571) 50%,
+              rgba(13, 17, 23, 0.6250875350140056) 75%,
+              rgba(13, 17, 23, 0.1516981792717087) 100%);
+      z-index: 1;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    &__form {
+
+      &-item {
+        width: 100%;
+      }
+
+      &-label {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background: radial-gradient(
+                  271.18% 138.81% at 99.48% 1.78%,
+                  rgba(141, 92, 255, 0.04) 19.59%,
+                  rgba(142, 92, 255, 0.08) 40.31%,
+                  rgba(71, 94, 255, 0.12) 59.66%,
+                  rgba(36, 94, 255, 0.16) 79.66%,
+                  rgba(0, 95, 255, 0.20) 99.6%
+  ),
+  #0D1117;
+  letter-spacing: .5px;
+}
+
+h4 {
+  margin: 0 0 $spacing-md;
+  font-family: $font-family-secondary;
+  font-size: $font-size-h4;
+  font-weight: 600;
+  line-height: 1.25; /* 26px */
+  letter-spacing: .5px;
+  text-transform: capitalize;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.container {
+  @include container;
+
+  @media only screen and (max-width: 1280px) {
+    max-width: 1024px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 768px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-width: 576px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    max-width: 100%;
+  }
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.title {
+  margin: 0 0 60px;
+  font-family: $font-family-secondary;
+  font-size: $font-size-h1;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .5px;
+
+  @media only screen and (max-width: 1280px) {
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 32px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 24px;
+  }
+}
+
+.title-h2 {
+  margin: 0 0 $spacing-xxl;
+  font-family: $font-family-secondary;
+  font-size: $font-size-h2;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .5px;
+  text-shadow: 0 0 8px rgba(142, 92, 255, 0.30);
+
+  @media only screen and (max-width: 1280px) {
+    margin-bottom: $spacing-xl;
+    font-size: 32px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-bottom: $spacing-lg;
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 20px;
+  }
+}
+
+.section {
+  padding: 80px 0;
+
+  @media only screen and (max-width: 1280px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    padding-top: $spacing-xxl;
+    padding-bottom: $spacing-xxl;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
+
+  @media only screen and (max-width: 576px) {
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+  }
+}
+
+.input,
+.textarea {
+  padding: $spacing-sm $spacing-m;
+  font-size: 16px;
+  font-weight: 400;
+  color: $text-color;
+  line-height: 1.5;
+  letter-spacing: .5px;
+  border-radius: $border-radius-sm;
+  border: 2px solid $neural-color-1;
+  background-color: $neural-color-3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+  outline: none;
+  transition: border-color .4s, box-shadow .4s, background-color .4s, opacity .4s;
+
+  &::placeholder {
+    font-weight: 400;
+    color: rgba($text-color, .5);
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 4px 8px 0 $primary-color;
+  }
+
+  &:disabled {
+    background-color: $neural-color-4;
+    opacity: .6;
+    pointer-events: none;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.btn-min {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}

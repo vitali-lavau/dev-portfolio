@@ -1,0 +1,169 @@
+@use "@/styles/abstracts/variables" as vars;
+
+.about {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  &__inner {
+    gap: 40px;
+  }
+
+  &__col {
+    width: calc(50% - 20px);
+  }
+
+  &__block {
+    padding: 80px 0;
+
+    &--img {
+      height: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(13, 17, 23, 0.64) 0%, rgba(13, 17, 23, 0.00) 100%);
+      backdrop-filter: blur(25px);
+    }
+  }
+
+  &__description {
+    margin: 0 0 vars.$spacing-xl;
+    font-size: 18px;
+    letter-spacing: .5px;
+  }
+
+  &__row {
+    gap: 24px;
+  }
+
+  &__item {
+    width: calc(50% - 12px);
+    padding: vars.$spacing-xl vars.$spacing-lg;
+    border-radius: vars.$border-radius-md;
+    border: 1px solid rgba(vars.$white-color, .2);
+    background: rgba(vars.$white-color, .08);
+    box-shadow: 0 4px 12px 0 rgba(vars.$primary-color, 0.15);
+    backdrop-filter: blur(6px);
+
+    &-img {
+      width: 100%;
+      margin: 0 0 vars.$spacing-md;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-text {
+      font-family: vars.$font-family-primary;
+      margin: 0 0 vars.$spacing-xs;
+      font-size: 16px;
+      letter-spacing: .5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/mainPage/about/about_img.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    z-index: 1;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    &__block {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    &__description {
+      margin-bottom: vars.$spacing-lg;
+      font-size: 16px;
+    }
+
+    &__item {
+      padding: vars.$spacing-lg vars.$spacing-md;
+
+      &-text {
+        font-size: vars.$font-size-small;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    position: relative;
+
+    &__block {
+      padding-top: vars.$spacing-xxl;
+      padding-bottom: vars.$spacing-xxl;
+    }
+
+    &__col {
+      width: 100%;
+    }
+
+    &__block {
+
+      &--img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        opacity: .3;
+        z-index: -1;
+      }
+    }
+
+
+    &__item {
+
+      &-img {
+
+        img {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+
+      &-inner {
+        margin-top: auto;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    &__block {
+      padding-top: vars.$spacing-xl;
+      padding-bottom: vars.$spacing-xl;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    &__block {
+      padding-top: vars.$spacing-lg;
+      padding-bottom: vars.$spacing-lg;
+    }
+
+    &__description {
+      margin-bottom: vars.$spacing-md;
+      font-size: vars.$font-size-small;
+    }
+
+    &__row {
+      gap: 16px;
+    }
+
+    &__item {
+      width: 100%;
+    }
+  }
+}

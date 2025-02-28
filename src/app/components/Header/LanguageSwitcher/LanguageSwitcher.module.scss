@@ -1,0 +1,66 @@
+@use '@/styles/abstracts/variables' as vars;
+
+.langSwitcher {
+
+  &__button {
+    color: vars.$text-color;
+
+    span {
+      margin: 0 vars.$spacing-sm 0 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: vars.$font-size-h4;
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__dropdown {
+    right: vars.$spacing-xs;
+    width: 60px;
+    margin: vars.$spacing-sm 0 0;
+    background-color: vars.$neural-color-3;
+    border: 1px solid vars.$block-border-color;
+    border-radius: vars.$border-radius-sm;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.30);
+
+    button {
+      padding: vars.$spacing-sm vars.$spacing-md;
+      color: vars.$text-color;
+      border-bottom: 1px solid vars.$block-border-color;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      text-transform: uppercase;
+      transition: background-color .4s;
+
+      &:first-child {
+        border-radius: vars.$border-radius-sm vars.$border-radius-sm 0 0;
+      }
+
+      &:last-child {
+        border-bottom: none;
+        border-radius: 0 0 vars.$border-radius-sm vars.$border-radius-sm;
+      }
+
+      &:hover {
+        background-color: vars.$neural-color-4;
+      }
+    }
+
+    .active {
+      font-weight: 600;
+      color: vars.$primary-color;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    &__dropdown {
+
+      button {
+        padding-top: vars.$spacing-xs;
+        padding-bottom: vars.$spacing-xs;
+      }
+    }
+  }
+}

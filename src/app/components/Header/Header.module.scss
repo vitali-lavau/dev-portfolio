@@ -1,0 +1,143 @@
+@use '@/styles/abstracts/variables' as vars;
+
+.header {
+  position: sticky;
+  top: 0;
+  opacity: 1;
+  background: rgba(22, 27, 34, 0.7);
+  box-shadow: 0 2px 10px 0 rgba(255, 255, 255, 0.15) inset, 0 6px 16px 0 rgba(13, 17, 23, 0.50);
+  backdrop-filter: blur(20px);
+  z-index: 4;
+
+  &__inner {
+    padding: vars.$spacing-xl 0;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+  }
+
+  &__nav {
+    margin: 0 0 0 60px;
+  }
+
+  &__lang {
+    margin: 0 0 0 auto;
+  }
+
+  &__btn {
+    margin: 0 0 0 32px;
+  }
+
+  @media only screen and (max-width: 1280px) {
+
+    &__inner {
+      padding-top: vars.$spacing-lg;
+      padding-bottom: vars.$spacing-lg;
+    }
+
+    &__nav {
+      margin-left: vars.$spacing-xxl;
+
+      ul li {
+        margin-right: vars.$spacing-lg;
+      }
+    }
+
+    &__btn {
+      margin-left: vars.$spacing-lg;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+
+    &__inner {
+      padding-top: vars.$spacing-md;
+      padding-bottom: vars.$spacing-md;
+    }
+
+    &__logo {
+      width: 100px;
+    }
+
+    &__nav {
+      margin-left: vars.$spacing-lg;
+
+      ul li {
+        margin-right: vars.$spacing-md;
+
+        a {
+          font-size: vars.$font-size-min;
+        }
+      }
+    }
+
+    &__lang {
+
+      button {
+
+        span {
+          margin-right: 4px;
+          font-size: vars.$font-size-small;
+          font-weight: 500;
+        }
+
+        svg {
+          width: vars.$border-radius-md;
+          height: vars.$spacing-md;
+        }
+      }
+    }
+
+    &__btn {
+      margin-left: vars.$spacing-md;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    &__inner {
+      padding-top: vars.$spacing-sm;
+      padding-bottom: vars.$spacing-sm;
+    }
+
+    &__logo {
+      width: 80px;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__mobile {
+      margin: 0 0 0 vars.$spacing-md;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+
+    &__logo {
+      width: 60px;
+    }
+
+    &__lang {
+
+      button {
+
+        span {
+          font-size: vars.$font-size-min;
+        }
+
+        svg {
+          width: vars.$spacing-md;
+          height: vars.$spacing-md;
+        }
+      }
+    }
+
+    &__btn,
+    &__mobile {
+      margin-left: vars.$spacing-sm;
+    }
+  }
+}

@@ -43,3 +43,6 @@ next-env.d.ts
 # WebStorm project files
 /.idea
 .idea/
+
+# ESLint and Prettier
+.eslintcache
